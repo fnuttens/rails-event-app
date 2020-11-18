@@ -7,3 +7,7 @@
     <li><%= link_to event.name, event_path(event) %></li>
 <% end %>
 </ul>
+
+<div class="apple_pagination">
+    <%= will_paginate @events %>
+</div>
