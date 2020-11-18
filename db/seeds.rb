@@ -17,3 +17,7 @@ end
 20.times do
     Event.create(name: Faker::Music.band, address: Faker::Address.street_address, description: Faker::Lorem.paragraph_by_chars)
 end
+
+Event.all.each do |event|
+    event.users << User.all.sample(Random.rand(100))
+end
