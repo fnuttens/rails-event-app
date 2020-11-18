@@ -1,12 +1,18 @@
 <h1>Events</h1>
 
+<% if admin_signed_in? %>
+    <%= link_to "Log out", destroy_admin_session_path, :method => :delete %>
+<% end %>
+
 <ul>
 <% @events.each do |event| %>
     <li><%= link_to event.name, event_path(event) %></li>
 <% end %>
 </ul>
 
-<%= link_to "New", new_event_path, class: "btn btn-info" %>
+<% if admin_signed_in? %>
+    <%= link_to "New", new_event_path, class: "btn btn-info" %>
+<% end %>
 
 <div class="apple_pagination">
     <%= will_paginate @events %>
