@@ -28,6 +28,17 @@ class EventsController < ApplicationController
   def edit
   end
 
+  # DELETE
+  def destroy
+    if @event.destroy
+      flash[:notice] = "Event correctly deleted"
+      redirect_to events_path
+    else
+      flash[:alert] = "An error has occurred"
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   # PUT /events/update
   def update
     if @event.update(event_params)

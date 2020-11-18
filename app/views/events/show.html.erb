@@ -9,3 +9,4 @@
 <p><%= @event.address %></p>
 
 <%= link_to "Edit", edit_event_path(@event) %>
+<%= link_to "Delete", event_path(@event), data: { confirm: "Are you sure ?" }, class: "btn btn-danger", method: :delete %>
