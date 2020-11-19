@@ -20,6 +20,7 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:notice] = "Your event has been successfully saved"
+      redirect_to event_path(@event)
     else
       flash[:alert] = "An error has occurred"
       render 'new'
