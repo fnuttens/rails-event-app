@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'faker'
 gem 'will_paginate', '~> 3.1.0'
 gem 'devise'
+gem 'dotenv-rails'
+gem 'sendgrid-ruby'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
