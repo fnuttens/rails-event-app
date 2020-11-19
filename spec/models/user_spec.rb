@@ -11,4 +11,13 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
   end
+
+  describe "Test after_create mail sender" do
+    context "testing ig mail sends correctly" do
+      it "sends an email after successfully creating the user" do
+        expect { FactoryBot.create(:user) }
+          .to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+  end
 end
